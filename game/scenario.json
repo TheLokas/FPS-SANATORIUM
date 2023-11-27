@@ -1,25 +1,28 @@
 {
+    "characters": [{"code_name": "pers1", "image":"kalivan nice.png", "oversample": 2}, {"code_name": "pers2", "image":"kalivan nice mir.png", "oversample": 2}],
     "scenes": {
         "1":{
-            "music": "first_scene_music.mp3",
-            "background": "background1.jpg",
+            "music": "def_music.mp3",
+            "background": "bg strashno",
             "events": {
                 "1":{
-                    "type":"empty",
-                    "sound":"sound1.mp3",
+                    "type":"dialogue",
+                    "characters": [{"name":"pers1", "xalign": 0.85, "yalign": 0.5 },{"name":"pers2",  "xalign": 0.35, "yalign": 0.5 }],
+                    "sound":"Arugal.mp3",
                     "text":"Начало",
+                    "text_author_name":"kalivan",
                     "next_event":null,
                     "next_scene":"2"
                 }
             }
         },
         "2":{
-            "music":"second_scene_music.mp3",
-            "background": "background2.jpg",
+            "music":"def_music.mp3",
+            "background": "background2",
             "events": {
                 "1":{
                     "type":"dialogue",
-                    "characters": [{"name":"pers1","character_image": "pers1.jpg", "position": "xalign 0.35 yalign 1" },{"name":"pers2", "character_image": "pers2.jpg", "position": "xalign 0.75 yalign 1"}],
+                    "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 },{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
                     "text":"Диалог 1",
                     "text_author_name":"pers1",
@@ -28,10 +31,11 @@
                 },
                 "2":{
                     "type":"choice",
-                    "sound":"sound2.mp3",
+                    "sound":"Arugal.mp3",
                     "characters": null,
                     "menu":{
                         "choice_text": "Выбор",
+                        "text_author_name":null,
                         "1":{
                             "option_text": "Перейти к ветке тестового сценария с нейтральной концовкой",
                             "next_event": null,
@@ -47,12 +51,12 @@
             }
         },
         "3":{
-            "music":"third_scene_music.mp3",
-            "background": "background3.jpg",
+            "music":null,
+            "background": "background3",
             "events": {
                 "1":{
                     "type":"dialogue",
-                    "characters": [{"name":"pers2", "character_image": "pers2.jpg", "position": "xalign 0.75 yalign 1"}],
+                    "characters": [{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
                     "text":"Диалог 2",
                     "text_author_name":"pers2",
@@ -60,19 +64,23 @@
                     "next_scene":null
                 },
                 "2":{
-                    "type":"ending",
-                    "sound":"sound3.mp3",
-                    "text":"Нейтральная концовка"
+                    "type":"dialogue",
+                    "characters": [{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
+                    "sound":null,
+                    "text":"Нейтральная концовка",
+                    "text_author_name":"pers2",
+                    "next_event":null,
+                    "next_scene":"0"
                 }
             }
         },
         "4":{
-            "music":"fourth_scene_music.mp3",
+            "music":"def_music.mp3",
             "background": "background4.jpg",
             "events": {
                 "1":{
                     "type":"dialogue",
-                    "characters": [{"name":"pers1","character_image": "pers1.jpg", "position": "xalign 0.35 yalign 1" },{"name":"pers2", "character_image": "pers2.jpg", "position": "xalign 0.75 yalign 1"}],
+                    "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 },{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
                     "text":"Диалог 3",
                     "text_author_name":"pers1",
@@ -85,30 +93,45 @@
                     "characters": null,
                     "menu":{
                         "choice_text": "Выбор",
+                        "text_author_name":null,
                         "1":{
                             "option_text": "Перейти к плохой концовке",
-                            "next_event": "3",
-                            "next_scene": null
+                            "next_event": null,
+                            "next_scene": "5"
                         },
                         "2":{
                             "option_text": "Перейти к хорошей концовке",
-                            "next_event": "4",
+                            "next_event": "3",
                             "next_scene": null
                         }
                     }
                 },
                 "3":{
-                    "type":"ending",
-                    "sound":"sound4.mp3",
-                    "text":"Плохая концовка"
-                },
-                "4":{
-                    "type":"ending",
-                    "sound":"sound5.mp3",
-                    "text":"Хорошая концовка"
+                    "type":"dialogue",
+                    "sound":"pipe.mp3",
+                    "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 }],
+                    "text":"Хорошая концовка",
+                    "text_author_name":"pers1",
+                    "next_event":null,
+                    "next_scene":"0"
+                }
+            }
+        },
+        "5":{
+            "music":"Soundtrack.mp3",
+            "background": "bg badend",
+            "events": {
+                "1":{
+                    "type":"dialogue",
+                    "characters": [{"name":"pers2", "xalign": 0.35, "yalign": 0.5 },{"name":"pers1", "xalign": 0.75, "yalign": 0.5 }],
+                    "sound":null,
+                    "text":"Плохая концовка",
+                    "text_author_name":"pers1",
+                    "next_event":null,
+                    "next_scene":"0"
                 }
             }
         }
       
-  }
+    }
 }
