@@ -1,4 +1,5 @@
 {
+    "characters": [{"code_name": "pers1", "image":"pers1.jpg"}, {"code_name": "pers2", "image":"pers2.jpg"}],
     "scenes": {
         "1":{
             "music": "first_scene_music.mp3",
@@ -19,7 +20,7 @@
             "events": {
                 "1":{
                     "type":"dialogue",
-                    "characters": [{"name":"pers1","character_image": "pers1.jpg", "position": "xalign 0.35 yalign 1" },{"name":"pers2", "character_image": "pers2.jpg", "position": "xalign 0.75 yalign 1"}],
+                    "characters": [{"name":"pers1", "position": "xalign 0.35 yalign 1" },{"name":"pers2", "position": "xalign 0.75 yalign 1"}],
                     "sound":null,
                     "text":"Диалог 1",
                     "text_author_name":"pers1",
@@ -52,7 +53,7 @@
             "events": {
                 "1":{
                     "type":"dialogue",
-                    "characters": [{"name":"pers2", "character_image": "pers2.jpg", "position": "xalign 0.75 yalign 1"}],
+                    "characters": [{"name":"pers2", "position": "xalign 0.75 yalign 1"}],
                     "sound":null,
                     "text":"Диалог 2",
                     "text_author_name":"pers2",
@@ -72,7 +73,7 @@
             "events": {
                 "1":{
                     "type":"dialogue",
-                    "characters": [{"name":"pers1","character_image": "pers1.jpg", "position": "xalign 0.35 yalign 1" },{"name":"pers2", "character_image": "pers2.jpg", "position": "xalign 0.75 yalign 1"}],
+                    "characters": [{"name":"pers1", "position": "xalign 0.35 yalign 1" },{"name":"pers2", "position": "xalign 0.75 yalign 1"}],
                     "sound":null,
                     "text":"Диалог 3",
                     "text_author_name":"pers1",
