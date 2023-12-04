@@ -9,7 +9,7 @@
                     "type":"dialogue",
                     "characters": [{"name":"pers1", "xalign": 0.85, "yalign": 0.5 },{"name":"pers2",  "xalign": 0.35, "yalign": 0.5 }],
                     "sound":"Arugal.mp3",
-                    "text":"Начало",
+                    "text":"Начало 1 главы",
                     "text_author_name":"kalivan",
                     "next_event":null,
                     "next_scene":"2"

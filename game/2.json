@@ -1,0 +1,137 @@
+{
+    "characters": [{"code_name": "pers1", "image":"kalivan nice.png", "oversample": 2}, {"code_name": "pers2", "image":"kalivan nice mir.png", "oversample": 2}],
+    "scenes": {
+        "1":{
+            "music": "def_music.mp3",
+            "background": "bg strashno",
+            "events": {
+                "1":{
+                    "type":"dialogue",
+                    "characters": [{"name":"pers1", "xalign": 0.85, "yalign": 0.5 },{"name":"pers2",  "xalign": 0.35, "yalign": 0.5 }],
+                    "sound":"Arugal.mp3",
+                    "text":"Начало 2 главы",
+                    "text_author_name":"kalivan",
+                    "next_event":null,
+                    "next_scene":"2"
+                }
+            }
+        },
+        "2":{
+            "music":"def_music.mp3",
+            "background": "background2",
+            "events": {
+                "1":{
+                    "type":"dialogue",
+                    "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 },{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
+                    "sound":null,
+                    "text":"Диалог 1",
+                    "text_author_name":"pers1",
+                    "next_event":"2",
+                    "next_scene":null
+                },
+                "2":{
+                    "type":"choice",
+                    "sound":"Arugal.mp3",
+                    "characters": null,
+                    "menu":{
+                        "choice_text": "Выбор",
+                        "text_author_name":null,
+                        "1":{
+                            "option_text": "Перейти к ветке тестового сценария с нейтральной концовкой",
+                            "next_event": null,
+                            "next_scene": "3"
+                        },
+                        "2":{
+                            "option_text": "Перейти к ветке тестового сценария с хорошей и плохой концовкой",
+                            "next_event": null,
+                            "next_scene": "4"
+                        }
+                    }
+                }
+            }
+        },
+        "3":{
+            "music":null,
+            "background": "background3",
+            "events": {
+                "1":{
+                    "type":"dialogue",
+                    "characters": [{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
+                    "sound":null,
+                    "text":"Диалог 2",
+                    "text_author_name":"pers2",
+                    "next_event":"2",
+                    "next_scene":null
+                },
+                "2":{
+                    "type":"dialogue",
+                    "characters": [{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
+                    "sound":null,
+                    "text":"Нейтральная концовка",
+                    "text_author_name":"pers2",
+                    "next_event":null,
+                    "next_scene":"0"
+                }
+            }
+        },
+        "4":{
+            "music":"def_music.mp3",
+            "background": "background4.jpg",
+            "events": {
+                "1":{
+                    "type":"dialogue",
+                    "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 },{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
+                    "sound":null,
+                    "text":"Диалог 3",
+                    "text_author_name":"pers1",
+                    "next_event":"2",
+                    "next_scene":null
+                },
+                "2":{
+                    "type":"choice",
+                    "sound": null,
+                    "characters": null,
+                    "menu":{
+                        "choice_text": "Выбор",
+                        "text_author_name":null,
+                        "1":{
+                            "option_text": "Перейти к плохой концовке",
+                            "next_event": null,
+                            "next_scene": "5"
+                        },
+                        "2":{
+                            "option_text": "Перейти к хорошей концовке",
+                            "next_event": "3",
+                            "next_scene": null
+                        }
+                    }
+                },
+                "3":{
+                    "type":"dialogue",
+                    "sound":"pipe.mp3",
+                    "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 }],
+                    "text":"Хорошая концовка",
+                    "text_author_name":"pers1",
+                    "next_event":null,
+                    "next_scene":"0"
+                }
+            }
+        },
+        "5":{
+            "music":"Soundtrack.mp3",
+            "background": "bg badend",
+            "events": {
+                "1":{
+                    "type":"dialogue",
+                    "characters": [{"name":"pers2", "xalign": 0.35, "yalign": 0.5 },{"name":"pers1", "xalign": 0.75, "yalign": 0.5 }],
+                    "sound":null,
+                    "text":"Плохая концовка",
+                    "text_author_name":"pers1",
+                    "next_event":null,
+                    "next_scene":"0"
+                }
+            }
+        }
+      
+    }
+}

@@ -2,11 +2,15 @@
     $ e = Character(u'Калыван', color="#c8ffc8")
     python:
         import json
+        import glob
+        import os
         config.has_autosave = False
         config.has_quicksave = False
 
         jsonFile = None
         #renpy.image("kalivan", Image("kalivan nice.png", xalign=0.5, yalign=0, oversample=2))
+        def get_number(array):
+            return array.get('number')
 
         def Test():
             #renpy.scene("bg strashno")
@@ -16,19 +20,38 @@
             #Character(kind=k)("ТЕстовый диалог")
             renpy.say("Калыван", "ТЕстовый диалог")
 
+        def GetFilenames():
+            filenames = renpy.list_files()
+            newFilenames = []
+            for filename in filenames:
+                if os.path.basename(filename).split('.')[0].isdigit() and os.path.basename(filename).split('.')[1] == 'json':
+                    newFilenames.append(filename)
+            newArray = []
+            for ar in newFilenames:
+                number = int(ar.split('\\')[-1].split('.')[0])
+                newArray.append({'path': ar, 'number': number})
+            newArray.sort(key = get_number)
+            result = []
+            for ar in newArray:
+                result.append(ar['path'])
+            return result
 
         def StartGame():
-            with renpy.open_file('scenario.json') as j:
-                scenario = json.load(j)
-                scenes = scenario["scenes"]
-                next = "1"
-                while next is not "0":
-                    next = ShowScene(scenes[next])
-            # scenario = json.load(j)
-            # scenes = scenario["scenes"]
-            # next = "1"
-            # while next is not "0":
-            #     next = ShowScene(scenes[next])
+            filenames = GetFilenames()
+            for filename in filenames:
+                with renpy.open_file(filename) as j:
+                    scenario = json.load(j)
+                    scenes = scenario["scenes"]
+                    next = "1"
+                    while next is not "0":
+                        next = ShowScene(scenes[next])
+            #for filename in filenames:
+                
+                # scenario = json.load(j)
+                # scenes = scenario["scenes"]
+                # next = "1"
+                # while next is not "0":
+                #     next = ShowScene(scenes[next])
             return
 
 
@@ -99,15 +122,18 @@
                 ShowScene(scenes[n])
                 return
             
+        filenames = GetFilenames()
+        for filename in filenames:
+            with renpy.open_file(filename) as j:
+                scenario = json.load(j)
+                characters = scenario["characters"]
+                #jsonFile.append(j)
+                    #scenes = scenario["scenes"]
+                for character in characters:
+                    renpy.image(character["code_name"], Image(character["image"],oversample = character["oversample"]))
+                    
 
-        with renpy.open_file('scenario.json') as j:
-            scenario = json.load(j)
-            characters = scenario["characters"]
-            jsonFile = j
-            #scenes = scenario["scenes"]
-            for character in characters:
-                renpy.image(character["code_name"], Image(character["image"],oversample = character["oversample"]))
-            
+                    
             # next = 1
             # while next != 0:
             #     next = ShowScene(scenes[next])
