@@ -827,9 +827,23 @@ screen preferences():
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-                        textbutton _("Без звука"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+                        # textbutton _("Без звука"):
+                        #     action Preference("all mute", "toggle")
+                        #     style "mute_all_button"
+
+
+                        vbox:
+                            style_prefix "radio"
+                            label _("Без звука")
+                            #for keys in preferences.mute:
+                            #    label _(f"{keys} - {preferences.mute[keys]}")
+                            #label _(f"keys - {preferences.mute.keys()}")
+                            imagebutton:
+                                if preferences.mute["main"] and preferences.mute["music"] and preferences.mute["sfx"]:
+                                    idle "images/settings/yes2.png"
+                                else:
+                                    idle "images/settings/no.png"
+                                action Preference("all mute", "toggle")
 
 
 style pref_label is gui_label

@@ -6,6 +6,7 @@
         import os
         config.has_autosave = False
         config.has_quicksave = False
+        config.hard_rollback_limit = 0
 
         jsonFile = None
         #renpy.image("kalivan", Image("kalivan nice.png", xalign=0.5, yalign=0, oversample=2))
@@ -36,15 +37,28 @@
                 result.append(ar['path'])
             return result
 
+
+        #Добавить аргументы в старт, начинающие игру с определённого файла, сцены, диалога
+        # StartGame(chapter, scene, dialogue)
         def StartGame():
             filenames = GetFilenames()
+            # i = 0
             for filename in filenames:
+                # i += 1
+                # if i < chapther:
+                #     continue
                 with renpy.open_file(filename) as j:
                     scenario = json.load(j)
                     scenes = scenario["scenes"]
+                    
+                    #next = scene
                     next = "1"
+
                     while next is not "0":
+                        # next = ShowScene(scenes[next], dialogue)
                         next = ShowScene(scenes[next])
+                        # dialogue = ["dialogue", "1"]
+                        
             #for filename in filenames:
                 
                 # scenario = json.load(j)
@@ -56,13 +70,17 @@
 
 
 
+        # ShowScene(scene, dialogue)
         def ShowScene(scene):
             renpy.scene()
             renpy.show(scene["background"])
             events = scene["events"]
             if scene["music"] is not None:
                 renpy.play(scene["music"], channel='music')
+
             next = ["dialogue", "1"]
+            #next = dialogue
+
             while next[1] is not "0":
                 next = ShowDialogue(events[next[1]])
                 if next[0]=="scene":
