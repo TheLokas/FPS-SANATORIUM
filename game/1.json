@@ -9,7 +9,7 @@
                     "type":"dialogue",
                     "characters": [{"name":"pers1", "xalign": 0.85, "yalign": 0.5 },{"name":"pers2",  "xalign": 0.35, "yalign": 0.5 }],
                     "sound":"Arugal.mp3",
-                    "text":"Начало 1 главы",
+                    "text":"Глава 1 Сцена 1 Диалог 1",
                     "text_author_name":"kalivan",
                     "next_event":null,
                     "next_scene":"2"
@@ -18,13 +18,13 @@
         },
         "2":{
             "music":"def_music.mp3",
-            "background": "background2",
+            "background": "bg strashno",
             "events": {
                 "1":{
                     "type":"dialogue",
                     "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 },{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
-                    "text":"Диалог 1",
+                    "text":"Глава 1 Сцена 2 Диалог 1",
                     "text_author_name":"pers1",
                     "next_event":"2",
                     "next_scene":null
@@ -34,7 +34,7 @@
                     "sound":"Arugal.mp3",
                     "characters": null,
                     "menu":{
-                        "choice_text": "Выбор",
+                        "choice_text": "Глава 1 Сцена 2 Диалог 2 Выбор",
                         "text_author_name":null,
                         "1":{
                             "option_text": "Перейти к ветке тестового сценария с нейтральной концовкой",
@@ -58,7 +58,7 @@
                     "type":"dialogue",
                     "characters": [{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
-                    "text":"Диалог 2",
+                    "text":"Глава 1 Сцена 3 Диалог 1",
                     "text_author_name":"pers2",
                     "next_event":"2",
                     "next_scene":null
@@ -67,7 +67,7 @@
                     "type":"dialogue",
                     "characters": [{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
-                    "text":"Нейтральная концовка",
+                    "text":"Глава 1 Сцена 3 Диалог 2 Нейтральная концовка",
                     "text_author_name":"pers2",
                     "next_event":null,
                     "next_scene":"0"
@@ -82,7 +82,7 @@
                     "type":"dialogue",
                     "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 },{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
-                    "text":"Диалог 3",
+                    "text":"Глава 1 Сцена 4 Диалог 1",
                     "text_author_name":"pers1",
                     "next_event":"2",
                     "next_scene":null
@@ -92,7 +92,7 @@
                     "sound": null,
                     "characters": null,
                     "menu":{
-                        "choice_text": "Выбор",
+                        "choice_text": "Глава 1 Сцена 4 Диалог 2 Выбор",
                         "text_author_name":null,
                         "1":{
                             "option_text": "Перейти к плохой концовке",
@@ -110,7 +110,7 @@
                     "type":"dialogue",
                     "sound":"pipe.mp3",
                     "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 }],
-                    "text":"Хорошая концовка",
+                    "text":"Глава 1 Сцена 4 Диалог 3 Хорошая концовка",
                     "text_author_name":"pers1",
                     "next_event":null,
                     "next_scene":"0"
@@ -125,7 +125,7 @@
                     "type":"dialogue",
                     "characters": [{"name":"pers2", "xalign": 0.35, "yalign": 0.5 },{"name":"pers1", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
-                    "text":"Плохая концовка",
+                    "text":"Глава 1 Сцена 5 Диалог 1 Плохая концовка",
                     "text_author_name":"pers1",
                     "next_event":null,
                     "next_scene":"0"

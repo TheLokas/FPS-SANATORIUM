@@ -1,4 +1,8 @@
-﻿################################################################################
+﻿#init -998 python:
+#    def Continue():
+#\        renpy.
+
+################################################################################
 ## Инициализация
 ################################################################################
 
@@ -296,6 +300,10 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if main_menu:
+
+            if persistent.continue_game:
+
+                textbutton _("Продолжить") action Start("continueGame")
 
             textbutton _("Новая игра") action Start()
 
