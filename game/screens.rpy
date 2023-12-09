@@ -1,7 +1,33 @@
-﻿#init -998 python:
-#    def Continue():
-#\        renpy.
+﻿init -998 python:
+    import json
+    import os
+    # Добавить удаление сохранения
+    def EditSavesJson(slot):
+        with renpy.open_file("saves.json") as j:
+            name = j.name
+            name = name.replace("\\","/")
+            if len(j.read()) == 0:
+                saves = dict()
+            else:
+                j.seek(0)
+                saves = json.loads(j.read())
+        save_string = {"chapter": str(persistent.savemoment["chapter"]), "scene": persistent.savemoment["scene"], "dialogue": persistent.savemoment["dialogue"][1]}
+        saves[str(slot)] = save_string
+        with open(name, "w") as j:
+            json.dump(saves,j)
+        return
 
+    def LoadGame(slot):
+        with renpy.open_file("saves.json") as j:
+            saves = json.loads(j.read())
+        save = saves[str(slot)]
+        persistent.savemoment["chapter"] = int(save["chapter"])
+        persistent.savemoment["scene"] = save["scene"]
+        persistent.savemoment["dialogue"] = ["dialogue", save["dialogue"]]
+        renpy.save_persistent()
+        #renpy.jump("loadGame")
+        return
+        
 ################################################################################
 ## Инициализация
 ################################################################################
@@ -653,15 +679,18 @@ screen file_slots(title):
                 for i in range(gui.file_slot_cols * gui.file_slot_rows):
 
                     $ slot = i + 1
-
                     button:
-                        action FileAction(slot)
-
+                        if title == "Сохранить":
+                            action [Function(EditSavesJson, int(FileSlotName(slot, 6))), FileAction(slot)]
+                        elif title == "Загрузить":
+                            action [Function(LoadGame, int(FileSlotName(slot, 6))), Start("loadGame"), FileAction(slot), ]
+                        else:
+                            action FileAction(slot)
                         has vbox
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %d %B %Y, %H:%M"), empty=_("Пустой слот")):
+                        text FileTime(slot, format=_("{#file_time}%A, %d %B %Y, %H:%M"), empty=_(title)):
                             style "slot_time_text"
 
                         text FileSaveName(slot):

@@ -1,7 +1,7 @@
 ﻿init:
     $ e = Character(u'Калыван', color="#c8ffc8")
-    $ persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
-    $ persistent.continue_game = False
+    #$ persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
+    #$ persistent.continue_game = False
     #define persistent.savechapter = 2
     python:
         import json
@@ -18,7 +18,7 @@
         #renpy.image("kalivan", Image("kalivan nice.png", xalign=0.5, yalign=0, oversample=2))
         def get_number(array):
             return array.get('number')
-
+       
         def Test():
             #renpy.scene("bg strashno")
             renpy.show("bg strashno")
@@ -46,16 +46,16 @@
 
         #Добавить аргументы в старт, начинающие игру с определённого файла, сцены, диалога
         #def StartGame(chapter, scene, dialogue):
-        def StartGame(continueGame = False):
+        def StartGame(continueGame = False, chapterNumber = 1, sceneNumber = "1", dialogueNumber = "1"):
 
             if continueGame:
                 chapter = persistent.savemoment["chapter"]
                 scene = persistent.savemoment["scene"]
                 dialogue = persistent.savemoment["dialogue"]
             else:
-                chapter = 1
-                scene = "1"
-                dialogue = ["dialogue", "1"]
+                chapter = chapterNumber
+                scene = sceneNumber
+                dialogue = ["dialogue", dialogueNumber]
             
             filenames = GetFilenames()
             persistent.continue_game = True
@@ -197,7 +197,9 @@ label start:
     #$ StartGame(chapter, scene, dialogue)
     $ StartGame(False)
     return
-
+label loadGame:
+    $ StartGame(True)
+    return
 label continueGame:
     $ StartGame(True)
     return
