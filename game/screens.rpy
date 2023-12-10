@@ -681,7 +681,7 @@ screen file_slots(title):
                     $ slot = i + 1
                     button:
                         if title == "Сохранить":
-                            action [Function(EditSavesJson, int(FileSlotName(slot, 6))), FileAction(slot)]
+                            action [FileSave(slot, confirm = True, action = Function(EditSavesJson, int(FileSlotName(slot, 6))))]
                         elif title == "Загрузить":
                             action [Function(LoadGame, int(FileSlotName(slot, 6))), Start("loadGame"), FileAction(slot), ]
                         else:
