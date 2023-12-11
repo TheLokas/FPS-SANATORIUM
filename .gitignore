@@ -3,5 +3,13 @@
 errors.txt
 log.txt
 traceback.txt
-cahce/
-saves/
+**/cache/*
+**/saves/*
+game/saves/*.save
+game/saves/navigation.json
+game/saves/persistent
+game/cache/bytecode-39.rpyb
+game/cache/py3analysis.rpyb
+game/cache/screens.rpyb
+game/cache/shaders.txt
+.vscode/settings.json

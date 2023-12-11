@@ -1,56 +1,331 @@
 {
-    "characters": [{"code_name": "pers1", "image":"kalivan nice.png", "oversample": 2}, {"code_name": "pers2", "image":"kalivan nice mir.png", "oversample": 2}],
+    "characters": [{"code_name": "Спурт", "image":"spurt.png", "oversample": 1.2}, {"code_name": "Артемиса", "image":"misa.png", "oversample": 0.8},
+                   {"code_name": "Пыль", "image":"dust.png", "oversample": 1}, {"code_name": "Никс", "image":"nicks.png", "oversample": 2},
+                    {"code_name": "Талари", "image":"talari.png", "oversample": 0.5}],
     "scenes": {
         "1":{
-            "music": "def_music.mp3",
-            "background": "bg strashno",
+            "music": "back.mp3",
+            "background": "bg talari",
             "events": {
                 "1":{
                     "type":"dialogue",
-                    "characters": [{"name":"pers1", "xalign": 0.85, "yalign": 0.5 },{"name":"pers2",  "xalign": 0.35, "yalign": 0.5 }],
-                    "sound":"Arugal.mp3",
-                    "text":"Глава 1 Сцена 1 Диалог 1",
-                    "text_author_name":"kalivan",
+                    "text":"Глава 1 - Старые преданья.",
+                    "characters":null,
+                    "sound":null,
+                    "text_author_name":"Рассказчик",
+                    "next_event":"2",
+                    "next_scene":null
+                },
+                "2":{
+                    "type":"dialogue",
+                    "text":"Герои прекрасного мира Талартис.\nСпасители Арабасты.\nИ просто обычные приключенцы.",
+                    "characters":null,
+                    "sound":null,
+                    "text_author_name":"Рассказчик",
+                    "next_event":"3",
+                    "next_scene":null
+                },
+                "3":{
+                    "type":"dialogue",
+                    "text":"Спурт - жадный кобольд с гениальным мозгом и удивительной смекалкой.",
+                    "characters":[{"name":"Спурт", "xalign": 0.7, "yalign": 0.6 }],
+                    "sound":null,
+                    "text_author_name":"Рассказчик",
+                    "next_event":"4",
+                    "next_scene":null
+                },
+                "4":{
+                    "type":"dialogue",
+                    "text":"Артемиса - благородная и добрая эльфийка, ученица великого архимага Ориона.",
+                    "characters":[{"name":"Артемиса", "xalign": 0.7, "yalign": 0.4 }],
+                    "sound":null,
+                    "text_author_name":"Рассказчик",
+                    "next_event":"5",
+                    "next_scene":null
+                },
+                "5":{
+                    "type":"dialogue",
+                    "text":"Никс - один из немногих чейнджлингов.\nЗаблудшая душа и та, кто примкнул ко Тьме.",
+                    "characters":[{"name":"Никс", "xalign": 0.7, "yalign": 0.3 }],
+                    "sound":null,
+                    "text_author_name":"Рассказчик",
+                    "next_event":"6",
+                    "next_scene":null
+                },
+                "6":{
+                    "type":"dialogue",
+                    "text":"Пыль - добрая и немного болтливая табакси.\nПрекрасная лучница и хорошая подруга.",
+
+
+                    "characters":[{"name":"Пыль", "xalign": 0.7, "yalign": 0.4 }],
+                    "sound":null,
+                    "text_author_name":"Рассказчик",
+                    "next_event":"7",
+                    "next_scene":null
+                },
+                "7":{
+                    "type":"dialogue",
+                    "text":"Талари - королева Арабасты.",
+                    "characters":[{"name":"Талари", "xalign": 0.7, "yalign": 0.6 }],
+                    "sound":null,
+                    "text_author_name":"Рассказчик",
                     "next_event":null,
                     "next_scene":"2"
                 }
             }
         },
         "2":{
-            "music":"def_music.mp3",
-            "background": "bg strashno",
+            "music":"back.mp3",
+            "background": "bg send",
             "events": {
                 "1":{
                     "type":"dialogue",
-                    "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 },{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
+                    "characters": null,
                     "sound":null,
-                    "text":"Глава 1 Сцена 2 Диалог 1",
-                    "text_author_name":"pers1",
+                    "text":"Талари просит наших героев отправиться в Юбу, дабы узнать о случившейся в городе эпидемии.",
+                    "text_author_name":"Рассказчик",
                     "next_event":"2",
                     "next_scene":null
                 },
                 "2":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Никс", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Мы уже столько здесь, но до сих пор ничего не нашли! Может, Талари ошиблась?",
+                    "text_author_name":"Никс",
+                    "next_event":"3",
+                    "next_scene":null
+                
+                },
+                "3":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Артемиса", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Нет! Талари была очень обеспокоена этим делом, так что мы должны всё хорошенько проверить.",
+                    "text_author_name":"Артемиса",
+                    "next_event":"4",
+                    "next_scene":null
+                },
+                "4":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Пыль", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Давайте поспрашиваем людей, может, они что-то заметили?",
+                    "text_author_name":"Пыль",
+                    "next_event":"5",
+                    "next_scene":null
+                },
+                "5":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Артемиса", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Хорошая мысль, но думаю, стоит ещё проверить улицы на след темной магии.",
+                    "text_author_name":"Артемиса",
+                    "next_event":"6",
+                    "next_scene":null
+                },
+                "6":{
                     "type":"choice",
-                    "sound":"Arugal.mp3",
+                    "sound": null,
                     "characters": null,
                     "menu":{
-                        "choice_text": "Глава 1 Сцена 2 Диалог 2 Выбор",
+                        "choice_text": "Выбор",
                         "text_author_name":null,
                         "1":{
-                            "option_text": "Перейти к ветке тестового сценария с нейтральной концовкой",
-                            "next_event": null,
-                            "next_scene": "3"
+                            "option_text": "Начинать расспрашивать людей",
+                            "next_event": "7",
+                            "next_scene": null
                         },
                         "2":{
-                            "option_text": "Перейти к ветке тестового сценария с хорошей и плохой концовкой",
-                            "next_event": null,
-                            "next_scene": "4"
+                            "option_text": "Изучать следы магии",
+                            "next_event": "8",
+                            "next_scene": null
                         }
                     }
+                },
+                "7":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": null,
+                    "text":"Расспрашивая людей, они замечают старушку, которую обходят выбросы чёрной магии.",
+                    "text_author_name":"Рассказчик",
+                    "next_event":"9",
+                    "next_scene":null
+                },
+                "8":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Артемиса", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Рассматривая следы магии, они замечают на главной площади что-то странное.",
+                    "text_author_name":"Рассказчик",
+                    "next_event":"8",
+                    "next_scene":null
+                },
+                "9":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": null,
+                    "text":"Они идут к ней.",
+                    "text_author_name":"Рассказчик",
+                    "next_event":null,
+                    "next_scene":"3"
                 }
             }
+            
         },
         "3":{
+            "music":"back.mp3",
+            "background": "bg send",
+            "events": {
+                "1":{
+                    "type":"dialogue",
+                    "characters": [{"name":"Спурт", "xalign": 0.75, "yalign": 0.5 }],
+                    "sound":null,
+                    "text":"Карга!",
+                    "text_author_name":"Спурт",
+                    "next_event":"2",
+                    "next_scene":null
+                },
+                "2":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Никс", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Милок, что ты такое бормочешь, ты что, с ума сошёл?",
+                    "text_author_name":"Бабка",
+                    "next_event":"3",
+                    "next_scene":null
+                
+                },
+                "3":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Артемиса", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Спурт, что ты такое говоришь о этой милой старушке",
+                    "text_author_name":"Артемиса",
+                    "next_event":"4",
+                    "next_scene":null
+                },
+                "4":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Никс", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Ой, какие у вас милые игрушки, а можно вон ту?",
+                    "text_author_name":"Никс",
+                    "next_event":"5",
+                    "next_scene":null
+                },
+                "5":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Никс", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Конечно, девочка, держи, с тебя один серебряный!",
+                    "text_author_name":"Бабка",
+                    "next_event":"6",
+                    "next_scene":null
+                },
+                "6":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Никс", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Спасибо!",
+                    "text_author_name":"Никс",
+                    "next_event":"7",
+                    "next_scene":null
+                },
+                "7":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Артемиса", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Видишь, Спурт, обычная старушка.",
+                    "text_author_name":"Артемиса",
+                    "next_event":"8",
+                    "next_scene":null
+                },
+                "8":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Артемиса", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Извините, бабушка, а вы не видели ничего необычного в последнее время?",
+                    "text_author_name":"Артемиса",
+                    "next_event":"9",
+                    "next_scene":null
+                },
+                "9":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Никс", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Ой, нет, милочка, вроде всё, как всегда.\n Но если хотите, приходите завтра, я поспрашиваю у своих сестёр - они те ещё сплетницы!\n Хи-хи-хи.",
+                    "text_author_name":"Бабка",
+                    "next_event":"10",
+                    "next_scene":null
+                },
+                "10":{
+                    "type":"choice",
+                    "sound": null,
+                    "characters": null,
+                    "menu":{
+                        "choice_text": "Выбор",
+                        "text_author_name":null,
+                        "1":{
+                            "option_text": "Снова назвать её Каргой!",
+                            "next_event": "11",
+                            "next_scene": null
+                        },
+                        "2":{
+                            "option_text": "Промолчать и злобно сверлить её взглядом.",
+                            "next_event": "8",
+                            "next_scene": null
+                        }
+                    }
+                },
+                "11":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Спурт", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"КАРГА!",
+                    "text_author_name":"Спурт ",
+                    "next_event":"12",
+                    "next_scene":null
+                },
+                "12":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Спурт", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Я же говорил, вы что, слепые? Странная старуха и ещё сёстры! Она точно карга, у неё там в подвале наверняка похищенные дети.",
+                    "text_author_name":"Спурт",
+                    "next_event":"13",
+                    "next_scene":null
+                },
+                "13":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Пыль", "xalign": 0.75, "yalign": 0.5 },{"name":"Артемиса", "xalign": 0.15, "yalign": 0.5 }],
+                    "text":"СПУРТ!",
+                    "text_author_name":"Пыль и Артемиса",
+                    "next_event":"14",
+                    "next_scene":null
+                },
+                "14":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": [{"name":"Артемиса", "xalign": 0.75, "yalign": 0.5 }],
+                    "text":"Извините, бабушка, мы пойдём, спасибо за всё!",
+                    "text_author_name":"Артемиса",
+                    "next_event":"15",
+                    "next_scene":null
+                },"15":{
+                    "type":"dialogue",
+                    "sound":null,
+                    "characters": null,
+                    "text":"Пыль и Артемиса под руки уводят Спурта.",
+                    "text_author_name":"Рассказчик",
+                    "next_event":"15",
+                    "next_scene":null
+                }
+            }
+            
+        },
+        "7":{
             "music":null,
             "background": "background3",
             "events": {
@@ -58,7 +333,7 @@
                     "type":"dialogue",
                     "characters": [{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
-                    "text":"Глава 1 Сцена 3 Диалог 1",
+                    "text":"Диалог 2",
                     "text_author_name":"pers2",
                     "next_event":"2",
                     "next_scene":null
@@ -67,7 +342,7 @@
                     "type":"dialogue",
                     "characters": [{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
-                    "text":"Глава 1 Сцена 3 Диалог 2 Нейтральная концовка",
+                    "text":"Нейтральная концовка",
                     "text_author_name":"pers2",
                     "next_event":null,
                     "next_scene":"0"
@@ -82,7 +357,7 @@
                     "type":"dialogue",
                     "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 },{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
-                    "text":"Глава 1 Сцена 4 Диалог 1",
+                    "text":"Диалог 3",
                     "text_author_name":"pers1",
                     "next_event":"2",
                     "next_scene":null
@@ -92,7 +367,7 @@
                     "sound": null,
                     "characters": null,
                     "menu":{
-                        "choice_text": "Глава 1 Сцена 4 Диалог 2 Выбор",
+                        "choice_text": "Выбор",
                         "text_author_name":null,
                         "1":{
                             "option_text": "Перейти к плохой концовке",
@@ -110,7 +385,7 @@
                     "type":"dialogue",
                     "sound":"pipe.mp3",
                     "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 }],
-                    "text":"Глава 1 Сцена 4 Диалог 3 Хорошая концовка",
+                    "text":"Хорошая концовка",
                     "text_author_name":"pers1",
                     "next_event":null,
                     "next_scene":"0"
@@ -125,13 +400,12 @@
                     "type":"dialogue",
                     "characters": [{"name":"pers2", "xalign": 0.35, "yalign": 0.5 },{"name":"pers1", "xalign": 0.75, "yalign": 0.5 }],
                     "sound":null,
-                    "text":"Глава 1 Сцена 5 Диалог 1 Плохая концовка",
+                    "text":"Плохая концовка",
                     "text_author_name":"pers1",
                     "next_event":null,
                     "next_scene":"0"
                 }
             }
         }
-      
     }
 }

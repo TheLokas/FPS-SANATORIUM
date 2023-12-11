@@ -1,7 +1,7 @@
 ﻿init:
     $ e = Character(u'Калыван', color="#c8ffc8")
-    $ persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
-    $ persistent.continue_game = False
+    #$ persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
+    #$ persistent.continue_game = False
     #define persistent.savechapter = 2
     python:
         import json
@@ -105,14 +105,17 @@
 
             while next[1] is not "0":
                 persistent.savemoment["dialogue"] = next
-                next = ShowDialogue(events[next[1]])
+                next = ShowDialogue(events[next[1]], scene["background"])
                 
                 if next[0]=="scene":
                     return next[1] 
             return 0
             
 
-        def ShowDialogue(event):
+        def ShowDialogue(event, bg):
+            renpy.scene()
+            renpy.show(bg)
+            #renpy.say("test", renpy.hide())
             eventType = event["type"]
             if event["sound"] is not None:
                 renpy.play(event["sound"], channel='sound')
@@ -135,7 +138,7 @@
                 if characters is not None:
                     for character in characters:
                         renpy.show(character["name"], at_list=[Position(xalign = character["xalign"], yalign = character["yalign"])])
-                renpy.say(menu["text_author_name"], menu["choice_text"])
+                #renpy.say("test", menu["choice_text"])
 
                 lenght = len(menu.keys())
                 choices = list()
