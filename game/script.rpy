@@ -105,14 +105,16 @@
 
             while next[1] is not "0":
                 persistent.savemoment["dialogue"] = next
-                next = ShowDialogue(events[next[1]])
+                next = ShowDialogue(events[next[1]],scene["background"])
                 
                 if next[0]=="scene":
                     return next[1] 
             return 0
             
 
-        def ShowDialogue(event):
+        def ShowDialogue(event,bg):
+            renpy.scene()
+            renpy.show(bg)
             eventType = event["type"]
             if event["sound"] is not None:
                 renpy.play(event["sound"], channel='sound')
