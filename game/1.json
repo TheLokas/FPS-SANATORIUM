@@ -592,16 +592,16 @@
                     "next_event":"19",
                     "next_scene":null
                 },
-                "20":{
+                "19":{
                     "type":"dialogue",
                     "sound":null,
                     "characters": null,
                     "text":"*Талари прибыла в город, и отправила ведьм в Акрадакт - тюрьму для тех, кто угрожает королевству*",
                     "text_author_name":"Рассказчик",
-                    "next_event":"21",
+                    "next_event":"20",
                     "next_scene":null
                 },
-                "21":{
+                "20":{
                     "type":"dialogue",
                     "sound":null,
                     "characters": null,
