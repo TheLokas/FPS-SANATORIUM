@@ -1,7 +1,11 @@
 *.rpyc
 *.rpymc
+*.rpyb
 errors.txt
 log.txt
 traceback.txt
-cahce/
+cache/
 saves/
+navigation.json
+.idea/
+__pycache__/

@@ -2,20 +2,7 @@
     import json
     import os
     # Добавить удаление сохранения
-    def EditSavesJson(slot):
-        with renpy.open_file("saves.json") as j:
-            name = j.name
-            name = name.replace("\\","/")
-            if len(j.read()) == 0:
-                saves = dict()
-            else:
-                j.seek(0)
-                saves = json.loads(j.read())
-        save_string = {"chapter": str(persistent.savemoment["chapter"]), "scene": persistent.savemoment["scene"], "dialogue": persistent.savemoment["dialogue"][1]}
-        saves[str(slot)] = save_string
-        with open(name, "w") as j:
-            json.dump(saves,j)
-        return
+    
 
     def LoadGame(slot):
         with renpy.open_file("saves.json") as j:
