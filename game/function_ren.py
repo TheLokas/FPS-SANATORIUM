@@ -115,7 +115,7 @@ import os
 def GetNotInDirectoryFilenames():
     directory = os.path.dirname(os.path.abspath(__file__))
     filenames_list = []
-    for (dirpath, dirnames, filenames) in os.walk(directory):
+    for (dirpath, dirnames, filenames) in os.walk(f"{directory}/chapters"):
         filenames_list.append(filenames)
     return filenames_list[0]
 
@@ -138,6 +138,8 @@ def EditSavesJson(slot):
 """renpy
 init -100 python:
 """
+#persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
+
 jsonFile = None
 
 chapter = persistent.savemoment["chapter"]

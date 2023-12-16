@@ -32,7 +32,7 @@
             newFilenames = []
             for filename in filenames:
                 if os.path.basename(filename).split('.')[0].isdigit() and os.path.basename(filename).split('.')[1] == 'json':
-                    newFilenames.append(filename)
+                    newFilenames.append(os.path.basename(filename))
             newArray = []
             for ar in newFilenames:
                 number = int(ar.split('\\')[-1].split('.')[0])
@@ -65,7 +65,7 @@
                 persistent.savemoment["chapter"] = i
                 if i < chapter:
                     continue
-                with renpy.open_file(filename) as j:
+                with renpy.open_file(f"chapters/{filename}") as j:
                     scenario = json.load(j)
                     scenes = scenario["scenes"]
                     
@@ -171,7 +171,7 @@
             
         filenames = GetFilenames()
         for filename in filenames:
-            with renpy.open_file(filename) as j:
+            with renpy.open_file(f"chapters/{filename}") as j:
                 scenario = json.load(j)
                 characters = scenario["characters"]
                 #jsonFile.append(j)
