@@ -4,6 +4,7 @@
 errors.txt
 log.txt
 traceback.txt
+!saves/persistent
 cache/
 saves/
 navigation.json
