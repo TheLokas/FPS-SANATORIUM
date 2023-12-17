@@ -1,137 +1,860 @@
 {
-    "characters": [{"code_name": "pers1", "image":"kalivan nice.png", "oversample": 2}, {"code_name": "pers2", "image":"kalivan nice mir.png", "oversample": 2}],
-    "scenes": {
-        "1":{
-            "music": "def_music.mp3",
-            "background": "bg strashno",
-            "events": {
-                "1":{
-                    "type":"dialogue",
-                    "characters": [{"name":"pers1", "xalign": 0.85, "yalign": 0.5 },{"name":"pers2",  "xalign": 0.35, "yalign": 0.5 }],
-                    "sound":"Arugal.mp3",
-                    "text":"Глава 2 Сцена 1 Диалог 1",
-                    "text_author_name":"kalivan",
-                    "next_event":null,
-                    "next_scene":"2"
-                }
-            }
-        },
-        "2":{
-            "music":"def_music.mp3",
-            "background": "background2",
-            "events": {
-                "1":{
-                    "type":"dialogue",
-                    "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 },{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
-                    "sound":null,
-                    "text":"Глава 2 Сцена 2 Диалог 1",
-                    "text_author_name":"pers1",
-                    "next_event":"2",
-                    "next_scene":null
-                },
-                "2":{
-                    "type":"choice",
-                    "sound":"Arugal.mp3",
-                    "characters": null,
-                    "menu":{
-                        "choice_text": "Глава 2 Сцена 2 Диалог 2 Выбор",
-                        "text_author_name":null,
-                        "1":{
-                            "option_text": "Перейти к ветке тестового сценария с нейтральной концовкой",
-                            "next_event": null,
-                            "next_scene": "3"
-                        },
-                        "2":{
-                            "option_text": "Перейти к ветке тестового сценария с хорошей и плохой концовкой",
-                            "next_event": null,
-                            "next_scene": "4"
-                        }
-                    }
-                }
-            }
-        },
-        "3":{
-            "music":null,
-            "background": "background3",
-            "events": {
-                "1":{
-                    "type":"dialogue",
-                    "characters": [{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
-                    "sound":null,
-                    "text":"Глава 2 Сцена 3 Диалог 1",
-                    "text_author_name":"pers2",
-                    "next_event":"2",
-                    "next_scene":null
-                },
-                "2":{
-                    "type":"dialogue",
-                    "characters": [{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
-                    "sound":null,
-                    "text":"Глава 2 Сцена 3 Диалог 2 Нейтральная концовка",
-                    "text_author_name":"pers2",
-                    "next_event":null,
-                    "next_scene":"0"
-                }
-            }
-        },
-        "4":{
-            "music":"def_music.mp3",
-            "background": "background4.jpg",
-            "events": {
-                "1":{
-                    "type":"dialogue",
-                    "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 },{"name":"pers2", "xalign": 0.75, "yalign": 0.5 }],
-                    "sound":null,
-                    "text":"Глава 2 Сцена 4 Диалог 1",
-                    "text_author_name":"pers1",
-                    "next_event":"2",
-                    "next_scene":null
-                },
-                "2":{
-                    "type":"choice",
-                    "sound": null,
-                    "characters": null,
-                    "menu":{
-                        "choice_text": "Глава 2 Сцена 4 Диалог 2 Выбор",
-                        "text_author_name":null,
-                        "1":{
-                            "option_text": "Перейти к плохой концовке",
-                            "next_event": null,
-                            "next_scene": "5"
-                        },
-                        "2":{
-                            "option_text": "Перейти к хорошей концовке",
-                            "next_event": "3",
-                            "next_scene": null
-                        }
-                    }
-                },
-                "3":{
-                    "type":"dialogue",
-                    "sound":"pipe.mp3",
-                    "characters": [{"name":"pers1", "xalign": 0.35, "yalign": 0.5 }],
-                    "text":"Глава 2 Сцена 4 Диалог 3 Хорошая концовка",
-                    "text_author_name":"pers1",
-                    "next_event":null,
-                    "next_scene":"0"
-                }
-            }
-        },
-        "5":{
-            "music":"Soundtrack.mp3",
-            "background": "bg badend",
-            "events": {
-                "1":{
-                    "type":"dialogue",
-                    "characters": [{"name":"pers2", "xalign": 0.35, "yalign": 0.5 },{"name":"pers1", "xalign": 0.75, "yalign": 0.5 }],
-                    "sound":null,
-                    "text":"Глава 2 Сцена 5 Диалог 1 Плохая концовка",
-                    "text_author_name":"pers1",
-                    "next_event":null,
-                    "next_scene":"0"
-                }
-            }
-        }
-      
+  "characters": [
+    {
+      "code_name": "Спурт",
+      "image": "spurt.png",
+      "oversample": 1.2
+    },
+    {
+      "code_name": "Артемиса",
+      "image": "misa.png",
+      "oversample": 0.8
+    },
+    {
+      "code_name": "Пыль",
+      "image": "dust.png",
+      "oversample": 1
+    },
+    {
+      "code_name": "Никс",
+      "image": "nicks.png",
+      "oversample": 1
+    },
+    {
+      "code_name": "Кастиил",
+      "image": "kas.png",
+      "oversample": 1.2
+    },
+    {
+      "code_name": "Бефор",
+      "image": "bif.png",
+      "oversample": 1.5 
+    },
+    {
+      "code_name": "Мирихил",
+      "image": "demon.png",
+      "oversample": 1
     }
+  ],
+  "scenes": {
+    "1": {
+      "music": "back.mp3",
+      "background": "bg talari",
+      "events": {
+        "1": {
+          "type": "dialogue",
+          "text": "Кастиил - Ангел божий. Командующий земным гарнизоном.",
+          "characters": [
+            {
+              "name": "Кастиил",
+              "xalign": 0.7,
+              "yalign": 0.6
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "2",
+          "next_scene": null
+        },
+        "2": {
+          "type": "dialogue",
+          "text": "Бефор - Ангел божий. Молот искупления и покаяния.",
+          "characters": [
+            {
+              "name": "Бефор",
+              "xalign": 0.7,
+              "yalign": 0.6
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Бефор",
+          "next_event": "3",
+          "next_scene": null
+        },
+        "3": {
+          "type": "dialogue",
+          "text": "Мерехил - Демон. Правитель 4 круга Ада.",
+          "characters": [
+            {
+              "name": "Мирихил",
+              "xalign": 0.7,
+              "yalign": 0.6
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Мирихил",
+          "next_event": null,
+          "next_scene": "2"
+        }
+      }
+    },
+    "2": {
+      "music": "back.mp3",
+      "background": "firecity",
+      "events": {
+        "1": {
+          "type": "dialogue",
+          "characters": null,
+          "sound": "fire.mp3",
+          "text": "*Артемисе сниться сон, про то, как в городе случиться, что-то ужасное.\n Пожары и люди в полном ужасе бегут с главной площади*",
+          "text_author_name": "Рассказчик",
+          "next_event": "2",
+          "next_scene": null
+        },
+        "2": {
+          "type": "dialogue",
+          "text": "*Артемиса просыпается*",
+          "characters": null,
+          "sound": "axx.mp3",
+          "text_author_name": "Рассказчик",
+          "next_event": null,
+          "next_scene": "3"
+        }
+      }
+    },
+    "3": {
+      "music": "back.mp3",
+      "background": "home",
+      "events": {
+        "1": {
+          "type": "dialogue",
+          "text": "Ах! Что это было?",
+          "characters": [
+            {
+              "name": "Артемиса",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": "axx.mp3",
+          "text_author_name": "Артемиса",
+          "next_event": "2",
+          "next_scene": null
+        },
+        "2": {
+          "type": "dialogue",
+          "text": "Никс уже давно проснулась и занималась своими делами",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "3",
+          "next_scene": null
+        },
+        "3": {
+          "type": "dialogue",
+          "text": "Что такое Миса?",
+          "characters": [
+            {
+              "name": "Никс",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Никс",
+          "next_event": "4",
+          "next_scene": null
+        },
+        "4": {
+          "type": "dialogue",
+          "text": "Нечего, просто кошмар приснился.",
+          "characters": [
+            {
+              "name": "Артемиса",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Артемиса",
+          "next_event": "5",
+          "next_scene": null
+        },
+        "5": {
+          "type": "dialogue",
+          "text": "Буди остальных, я думаю, что сегодня мы проверим стены города.",
+          "characters": [
+            {
+              "name": "Артемиса",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Артемиса",
+          "next_event": "6",
+          "next_scene": null
+        },
+        "6": {
+          "type": "dialogue",
+          "text": "Стены? Что болезни вообще там делать. Людей не много, а наверху, от силы пара \nстражников.",
+          "characters": [
+            {
+              "name": "Никс",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Никс",
+          "next_event": "7",
+          "next_scene": null
+        },
+        "7": {
+          "type": "dialogue",
+          "text": "Именно! Да и знаешь... ",
+          "characters": [
+            {
+              "name": "Артемиса",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Артемиса",
+          "next_event": "8",
+          "next_scene": null
+        },
+        "8": {
+          "type": "dialogue",
+          "text": "С того момента как я проснулась, есть такое странное...",
+          "characters": [
+            {
+              "name": "Артемиса",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Артемиса",
+          "next_event": "9",
+          "next_scene": null
+        },
+        "9": {
+          "type": "dialogue",
+          "text": "Будем считать это предчувствием.",
+          "characters": [
+            {
+              "name": "Артемиса",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Артемиса",
+          "next_event": "10",
+          "next_scene": null
+        },
+        "10": {
+          "type": "dialogue",
+          "text": "Ладно, пойду разбужу их.",
+          "characters": [
+            {
+              "name": "Никс",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Никс",
+          "next_event": null,
+          "next_scene": "4"
+        }
+      }
+    },
+      "4": {
+        "music": "bg relax.mp3",
+        "background": "bg wall",
+        "events": {
+          "1": {
+            "type": "dialogue",
+            "text": "Через час, наши герои уже были высоко на стене города",
+            "characters": null,
+            "sound": null,
+            "text_author_name": "Рассказчик",
+            "next_event": "12",
+            "next_scene": null
+          },
+          "12": {
+            "type": "dialogue",
+            "text": "Осматривая город с высоты стен, они заметили,\n что скопление тёмной магии исходит прямо из центра города",
+            "characters": null,
+            "sound": null,
+            "text_author_name": "Рассказчик",
+            "next_event": "13",
+            "next_scene": null
+          },
+          "13": {
+            "type": "dialogue",
+            "text": "Изучая природу исходящей магии, Артемиса заметила недалеко от себя 2 фигуры.",
+            "characters": null,
+            "sound": null,
+            "text_author_name": "Рассказчик",
+            "next_event": "14",
+            "next_scene": null
+          },
+          "14": {
+            "type": "dialogue",
+            "text": "Она приблизилась к ним.",
+            "characters": null,
+            "sound": null,
+            "text_author_name": "Рассказчик",
+            "next_event": "15",
+            "next_scene": null
+          },
+          "15": {
+            "type": "dialogue",
+            "text": "Кастиил?",
+            "characters": [
+              {
+                "name": "Артемиса",
+                "xalign": 0.7,
+                "yalign": 0.4
+              }
+            ],
+            "sound": null,
+            "text_author_name": "Артемиса",
+            "next_event": "16",
+            "next_scene": null
+          },
+          "16": {
+            "type": "dialogue",
+            "text": "Да, Артемиса...",
+            "characters": [
+              {
+                "name": "Кастиил",
+                "xalign": 0.7,
+                "yalign": 0.4
+              }
+            ],
+            "sound": null,
+            "text_author_name": "Кастиил",
+            "next_event": "17",
+            "next_scene": null
+          },
+          "17": {
+            "type": "dialogue",
+            "text": "Кастиил! Мы теряем время с этими мартышками! ",
+            "characters": [
+              {
+                "name": "Бефор",
+                "xalign": 0.7,
+                "yalign": 0.4
+              }
+            ],
+            "sound": null,
+            "text_author_name": "Бефор",
+            "next_event": "18",
+            "next_scene": null
+          },
+          "18": {
+            "type": "dialogue",
+            "text": "Ты знаешь приказ! Так что жди...",
+            "characters": [
+              {
+                "name": "Кастиил",
+                "xalign": 0.7,
+                "yalign": 0.4
+              }
+            ],
+            "sound": null,
+            "text_author_name": "Кастиил",
+            "next_event": "19",
+            "next_scene": null
+          },
+          "19": {
+            "type": "dialogue",
+            "text": "Артемиса, ты должна остановить это... ",
+            "characters": [
+              {
+                "name": "Кастиил",
+                "xalign": 0.7,
+                "yalign": 0.4
+              }
+            ],
+            "sound": null,
+            "text_author_name": "Кастиил",
+            "next_event": "20",
+            "next_scene": null
+          },
+          "20": {
+            "type": "dialogue",
+            "text": "Или мы остановим...",
+            "characters": [
+              {
+                "name": "Кастиил",
+                "xalign": 0.7,
+                "yalign": 0.4
+              }
+            ],
+            "sound": null,
+            "text_author_name": "Кастиил",
+            "next_event": "21",
+            "next_scene": null
+          },
+          "21": {
+            "type": "dialogue",
+            "text": "Что мы должны остановить?",
+            "characters": [
+              {
+                "name": "Артемиса",
+                "xalign": 0.7,
+                "yalign": 0.4
+              }
+            ],
+            "sound": null,
+            "text_author_name": "Артемиса",
+            "next_event": "22",
+            "next_scene": null
+          },
+          "22": {
+            "type": "dialogue",
+            "text": "Призыв Мерехила...",
+            "characters": [
+              {
+                "name": "Кастиил",
+                "xalign": 0.7,
+                "yalign": 0.4
+              }
+            ],
+            "sound": null,
+            "text_author_name": "Кастиил",
+            "next_event": "23",
+            "next_scene": null
+          },
+          "23": {
+            "type": "choice",
+            "sound": null,
+            "characters": null,
+            "menu": {
+              "choice_text": "Выбор",
+              "text_author_name": null,
+              "1": {
+                "option_text": "Мы остановим его.",
+                "next_event": null,
+                "next_scene": "5"
+              },
+              "2": {
+                "option_text": "Это не в наших силах.",
+                "next_event": null,
+                "next_scene": "7"
+              }
+            }
+          }
+        }
+      },
+    "5": {
+      "music": "back.mp3",
+      "background": "bg wall",
+      "events": {
+        "1": {
+          "type": "dialogue",
+          "text": "Да будет так!",
+          "characters": [
+            {
+              "name": "Кастиил",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Кастиил",
+          "next_event": "2",
+          "next_scene": null
+        },
+        "2": {
+          "type": "dialogue",
+          "text": "Артемиса рассказывает своим друзьям, о приближавшейся угрозе и они отправляются на главную площадь.\n И от некогда прекрасного города...",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "3",
+          "next_scene": null
+        },
+        "3": {
+          "type": "dialogue",
+          "text": "Добравшись до площади, они видят, как 3 карги произносят древний ритуал и уже почти завершили его.",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "4",
+          "next_scene": null
+        },
+        "4": {
+          "type": "dialogue",
+          "text": "Мы должны остановить их!",
+          "characters": [
+            {
+              "name": "Артемиса",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Артемиса",
+          "next_event": "5",
+          "next_scene": null
+        },
+        "5": {
+          "type": "dialogue",
+          "text": "Я постараюсь приблизиться к ним!",
+          "characters": [
+            {
+              "name": "Никс",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Никс",
+          "next_event": "6",
+          "next_scene": null
+        },
+        "6": {
+          "type": "dialogue",
+          "text": "А Я ГОВОРИЛ, ЧТО ЭТО КАРГА!",
+          "characters": [
+            {
+              "name": "Спурт",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Спурт",
+          "next_event": "7",
+          "next_scene": null
+        },
+        "7": {
+          "type": "dialogue",
+          "text": "Наши герои устремились в бой, но оказалось слишком поздно.",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "8",
+          "next_scene": null
+        },
+        "8": {
+          "type": "dialogue",
+          "text": "Круг призыва был завершён, и магия ритуала пробудилась.",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "9",
+          "next_scene": null
+        },
+        "9": {
+          "type": "dialogue",
+          "text": "НАКОНЕЦТО! Я ТАК ДОЛГО ЭТОГО ЖДАЛ.",
+          "characters": [
+            {
+              "name": "Мирихил",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Мирихил",
+          "next_event": "10",
+          "next_scene": null
+        },
+        "10": {
+          "type": "dialogue",
+          "text": "ХАХАХАХАХАXAXAXAXAXAXAXA",
+          "characters": [
+            {
+              "name": "Мирихил",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": "demonfun.mp3",
+          "text_author_name": "Мирихил",
+          "next_event": "11",
+          "next_scene": null
+        },
+        "11": {
+          "type": "dialogue",
+          "text": "Чё? Я думал, это будет Люцифер. А это всего-то какой-то жалкий демон!",
+          "characters": [
+            {
+              "name": "Спурт",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Спурт",
+          "next_event": "12",
+          "next_scene": null
+        },
+        "12": {
+          "type": "dialogue",
+          "text": "Боевые перчатки Спурта вспыхнули огнем, и он отправился в бой",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "13",
+          "next_scene": null
+        },
+        "13": {
+          "type": "dialogue",
+          "text": "Спурт, Никс задержите его, а мы с Пылью разберёмся с ведьмами!",
+          "characters": [
+            {
+              "name": "Артемиса",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Артемиса",
+          "next_event": "14",
+          "next_scene": null
+        },
+        "14": {
+          "type": "dialogue",
+          "text": "После того как Артемиса и пыль покончили с ведьмами, Мерехил решил, что игры кончились.",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "15",
+          "next_scene": null
+        },
+        "15": {
+          "type": "dialogue",
+          "text": "ТЫ ДАЖЕ НЕ ЛЮЦЕФЕР!",
+          "characters": [
+            {
+              "name": "Спурт",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Спурт",
+          "next_event": "16",
+          "next_scene": null
+        },
+        "16": {
+          "type": "dialogue",
+          "text": "Спурт подпрыгнул и сделал пару тяжёлых ударов прямо в грудь демона.",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "17",
+          "next_scene": null
+        },
+        "17": {
+          "type": "dialogue",
+          "text": "Агххххх...",
+          "characters": [
+            {
+              "name": "Мирихил",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Мирихил",
+          "next_event": "18",
+          "next_scene": null
+        },
+        "18": {
+          "type": "dialogue",
+          "text": "*Демону это не понравилось и поэтому он призвал свою адскую булаву и сделал 3 удара прямо по Спурту,\n И в конце, когда Спурт уже еле стоял, он вдавил его в землю своей ногой.",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "19",
+          "next_scene": null
+        },
+        "19": {
+          "type": "dialogue",
+          "text": "Но несмотря на это Спурт выполнил свою задачу\n Он дал время Пыли и Артемисе, подготовить свои сильнейшие заклинания.",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "20",
+          "next_scene": null
+        },
+        "20": {
+          "type": "dialogue",
+          "text": "Покончим с этим Демоном!",
+          "characters": [
+            {
+              "name": "Пыль",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Пыль",
+          "next_event": "21",
+          "next_scene": null
+        },
+        "21": {
+          "type": "dialogue",
+          "text": "Сделаем его!",
+          "characters": [
+            {
+              "name": "Артемиса",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Артемиса",
+          "next_event": "22",
+          "next_scene": null
+        },
+        "22": {
+          "type": "dialogue",
+          "text": "Демон попытался им помешать, но оказался опутан тенями Никс",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "23",
+          "next_scene": null
+        },
+        "23": {
+          "type": "dialogue",
+          "text": "Прошло лишь мгновение и яркая вспышка, но в груди демона сияла лишь дыра.",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "24",
+          "next_scene": null
+        },
+        "24": {
+          "type": "dialogue",
+          "text": "Он упал замертво",
+          "characters": null,
+          "sound": null,
+          "text_author_name": "Рассказчик",
+          "next_event": "25",
+          "next_scene": null
+        },
+        "25": {
+          "type": "dialogue",
+          "text": "Спурт! С тобой всё хорошо?",
+          "characters": [
+            {
+              "name": "Никс",
+              "xalign": 0.3,
+              "yalign": 0.4
+            },
+            {
+              "name": "Артемиса",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Артемиса и Никс",
+          "next_event": "26",
+          "next_scene": null
+        },
+        "26": {
+          "type": "dialogue",
+          "text": "(откашливаясь) Да что могло случиться то? Он же всего лишь жалкий демон!",
+          "characters": [
+            {
+              "name": "Спурт",
+              "xalign": 0.7,
+              "yalign": 0.4
+            }
+          ],
+          "sound": null,
+          "text_author_name": "Спурт",
+          "next_event": null,
+          "next_scene": "6"
+        }
+      }
+    },
+  "6": {
+    "music": null,
+    "background": "bazar2",
+    "events": {
+      "1": {
+        "type": "dialogue",
+        "text": "Люди со всего города вышли на площадь\n Аплодируя нашим героям. Они благодарили их, за спасение",
+        "characters": null,
+        "sound": null,
+        "text_author_name": "Рассказчик",
+        "next_event": null,
+        "next_scene": "0"
+      }
+    }
+  },
+  "7": {
+    "music": null,
+    "background": "bg wall",
+    "events": {
+      "1": {
+        "type": "dialogue",
+        "text": "Тогда уходите!",
+        "characters": [
+          {
+            "name": "Кастиил",
+            "xalign": 0.7,
+            "yalign": 0.4
+          }
+        ],
+        "sound": null,
+        "text_author_name": "Кастиил",
+        "next_event": null,
+        "next_scene": "8"
+      }
+    }
+  },
+  "8": {
+    "music": null,
+    "background": "bg blindinglight",
+    "events": {
+      "1": {
+        "type": "dialogue",
+        "text": "Ангелы поднялись в воздух, подняв свои клинки. Они засветились святым огнём...",
+        "characters": null,
+        "sound": null,
+        "text_author_name": "Рассказчик",
+        "next_event": "3",
+        "next_scene": null
+      },
+      "3": {
+        "type": "dialogue",
+        "text": "Вспышка озарила город...",
+        "characters": null,
+        "sound": null,
+        "text_author_name": "Рассказчик",
+        "next_event": "4",
+        "next_scene": null
+      },
+      "4": {
+        "type": "dialogue",
+        "text": "И от некогда прекрасного города...",
+        "characters": null,
+        "sound": null,
+        "text_author_name": "Рассказчик",
+        "next_event": null,
+        "next_scene": "9"
+      }
+    }
+  },
+  "9": {
+    "music": null,
+    "background": "bg pipe",
+    "events": {
+      "1": {
+        "type": "dialogue",
+        "text": "Осталась лишь воронка....",
+        "characters": null,
+        "sound": null,
+        "text_author_name": "Рассказчик",
+        "next_event": null,
+        "next_scene": "0"
+      }
+    }
+  }
+}
 }
