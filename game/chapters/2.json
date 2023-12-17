@@ -18,7 +18,7 @@
     {
       "code_name": "Никс",
       "image": "nicks.png",
-      "oversample": 1
+      "oversample": 1.0
     },
     {
       "code_name": "Кастиил",
@@ -517,7 +517,7 @@
             {
               "name": "Спурт",
               "xalign": 0.7,
-              "yalign": 0.4
+              "yalign": 0.6
             }
           ],
           "sound": null,
@@ -580,7 +580,7 @@
             {
               "name": "Спурт",
               "xalign": 0.7,
-              "yalign": 0.4
+              "yalign": 0.6
             }
           ],
           "sound": null,
@@ -628,7 +628,7 @@
             {
               "name": "Спурт",
               "xalign": 0.7,
-              "yalign": 0.4
+              "yalign": 0.6
             }
           ],
           "sound": null,
@@ -762,7 +762,7 @@
             {
               "name": "Спурт",
               "xalign": 0.7,
-              "yalign": 0.4
+              "yalign": 0.6
             }
           ],
           "sound": null,

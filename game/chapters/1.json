@@ -18,7 +18,7 @@
     {
       "code_name": "Никс",
       "image": "nicks.png",
-      "oversample": 0.1
+      "oversample": 1.0
     },
     {
       "code_name": "Талари",
