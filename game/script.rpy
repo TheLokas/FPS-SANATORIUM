@@ -49,9 +49,12 @@
         def StartGame(continueGame = False, chapterNumber = 1, sceneNumber = "1", dialogueNumber = "1"):
 
             if continueGame:
-                chapter = persistent.savemoment["chapter"]
-                scene = persistent.savemoment["scene"]
-                dialogue = persistent.savemoment["dialogue"]
+                try: 
+                    chapter = persistent.savemoment["chapter"]
+                    scene = persistent.savemoment["scene"]
+                    dialogue = persistent.savemoment["dialogue"]
+                except:
+                    persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
             else:
                 chapter = chapterNumber
                 scene = sceneNumber

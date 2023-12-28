@@ -142,9 +142,12 @@ init -100 python:
 
 jsonFile = None
 
-chapter = persistent.savemoment["chapter"]
-scene = persistent.savemoment["scene"]
-dialogue = persistent.savemoment["dialogue"]
+try: 
+    chapter = persistent.savemoment["chapter"]
+    scene = persistent.savemoment["scene"]
+    dialogue = persistent.savemoment["dialogue"]
+except:
+    persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
 
 def get_number(array):
     return array.get('number')
