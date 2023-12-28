@@ -360,7 +360,7 @@ screen character_gallery():
 
     add gui.main_menu_background
     $length = len(persistent.character_mention.keys())
-    grid 3 length/3:
+    grid 3 length/3 + 1:
         xfill True
         yfill True
         $i = 0
@@ -368,7 +368,7 @@ screen character_gallery():
         for character in persistent.character_mention.keys():
             add character_g.make_button(character, Image(image_dict[character], oversample = 3),xalign =0.5, yalign =0.5)
             $i+=1
-        for j in range(0, 9 - i):
+        for j in range(0, (3*int(length/3) + 1) - i):
             null
             $j+=1
     textbutton "Назад" text_color "#00AB6F" action Return() xalign 0.01 yalign 0.95
