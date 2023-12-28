@@ -4,10 +4,11 @@ import io
 
 class PersistentEmulate():
     savemoment = {}
+    character_mention = {}
 
 persistent = PersistentEmulate()
-persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
 
+persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
 
 def CheckJSON(filename):
     with io.open(f"game/{filename}", "r", encoding='utf-8') as f:

@@ -3,31 +3,37 @@
     {
       "code_name": "Спурт",
       "image": "spurt.png",
+      "gallery_image": "spurt gallery.png",
       "oversample": 1.2
     },
     {
       "code_name": "Артемиса",
       "image": "misa.png",
+      "gallery_image": "misa gallery.png",
       "oversample": 0.8
     },
     {
       "code_name": "Пыль",
       "image": "dust.png",
+      "gallery_image": "dust gallery.png",
       "oversample": 1
     },
     {
       "code_name": "Никс",
       "image": "nicks.png",
+      "gallery_image": "nicks gallery.png",
       "oversample": 0.1
     },
     {
       "code_name": "Талари",
       "image": "talari.png",
+      "gallery_image": "talari gallery.png",
       "oversample": 0.5
     },
     {
       "code_name": "Бабка",
       "image": "babka.png",
+      "gallery_image": "babka gallery.png",
       "oversample": 0.4
     }
   ],
