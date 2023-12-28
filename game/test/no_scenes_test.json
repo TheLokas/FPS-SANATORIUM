@@ -1,0 +1,5 @@
+{
+    "characters": [{"code_name": "Спурт", "image":"spurt.png", "oversample": 1.2}, {"code_name": "Артемиса", "image":"misa.png", "oversample": 0.8},
+                     {"code_name": "Пыль", "image":"dust.png", "oversample": 1}, {"code_name": "Никс", "image":"nicks.png", "oversample": 2},
+                      {"code_name": "Талари", "image":"talari.png", "oversample": 0.5}]
+}

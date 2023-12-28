@@ -1,4 +1,21 @@
-﻿################################################################################
+﻿init -998 python:
+    import json
+    import os
+    # Добавить удаление сохранения
+    
+
+    def LoadGame(slot):
+        with renpy.open_file("saves.json") as j:
+            saves = json.loads(j.read())
+        save = saves[str(slot)]
+        persistent.savemoment["chapter"] = int(save["chapter"])
+        persistent.savemoment["scene"] = save["scene"]
+        persistent.savemoment["dialogue"] = ["dialogue", save["dialogue"]]
+        renpy.save_persistent()
+        #renpy.jump("loadGame")
+        return
+        
+################################################################################
 ## Инициализация
 ################################################################################
 
@@ -296,6 +313,10 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if main_menu:
+
+            if persistent.continue_game:
+
+                textbutton _("Продолжить") action Start("continueGame")
 
             textbutton _("Новая игра") action Start()
 
@@ -645,15 +666,18 @@ screen file_slots(title):
                 for i in range(gui.file_slot_cols * gui.file_slot_rows):
 
                     $ slot = i + 1
-
                     button:
-                        action FileAction(slot)
-
+                        if title == "Сохранить":
+                            action [FileSave(slot, confirm = True, action = Function(EditSavesJson, int(FileSlotName(slot, 6))))]
+                        elif title == "Загрузить":
+                            action [Function(LoadGame, int(FileSlotName(slot, 6))), Start("loadGame"), FileAction(slot), ]
+                        else:
+                            action FileAction(slot)
                         has vbox
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %d %B %Y, %H:%M"), empty=_("Пустой слот")):
+                        text FileTime(slot, format=_("{#file_time}%A, %d %B %Y, %H:%M"), empty=_(title)):
                             style "slot_time_text"
 
                         text FileSaveName(slot):
@@ -827,9 +851,23 @@ screen preferences():
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-                        textbutton _("Без звука"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+                        # textbutton _("Без звука"):
+                        #     action Preference("all mute", "toggle")
+                        #     style "mute_all_button"
+
+
+                        vbox:
+                            style_prefix "radio"
+                            label _("Без звука")
+                            #for keys in preferences.mute:
+                            #    label _(f"{keys} - {preferences.mute[keys]}")
+                            #label _(f"keys - {preferences.mute.keys()}")
+                            imagebutton:
+                                if preferences.mute["main"] and preferences.mute["music"] and preferences.mute["sfx"]:
+                                    idle "images/settings/yes2.png"
+                                else:
+                                    idle "images/settings/no.png"
+                                action Preference("all mute", "toggle")
 
 
 style pref_label is gui_label

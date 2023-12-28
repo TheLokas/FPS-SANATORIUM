@@ -1,0 +1,29 @@
+{
+    "characters": [{"code_name": "pers1", "image":"pers1.png", "oversample": 2}, {"code_name": "pers2", "image":"pers2.png", "oversample": 2}],
+    "scenes": {
+        "1":{
+            "music": "music.mp3",
+            "background": "bg",
+            "events": {
+                "1":{
+                    "type":"dialogue",
+                    "characters": [{"name":"pers1", "xalign": 0.85, "yalign": 0.5 },{"name":"pers2",  "xalign": 0.35, "yalign": 0.5 }],
+                    "sound":"sound.mp3",
+                    "text":"text",
+                    "text_author_name":"pers1",
+                    "next_event":"2",
+                    "next_scene":null
+                }, 
+                "2":{
+                    "type":"dialogue",
+                    "characters": [{"name":"pers1", "xalign": 0.85, "yalign": 0.5 },{"name":"pers2",  "xalign": 0.35, "yalign": 0.5 }],
+                    "sound":"sound.mp3",
+                    "text":"text",
+                    "text_author_name":"pers2",
+                    "next_event":null,
+                    "next_scene":"0"
+                }
+            }
+        }
+    }
+}

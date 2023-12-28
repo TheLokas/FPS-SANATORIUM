@@ -1,0 +1,64 @@
+{
+    "characters": [{"code_name": "pers1", "image":"pers1.png", "oversample": 2}, {"code_name": "pers2", "image":"pers2.png", "oversample": 2}],
+    "scenes": {
+      "1": {
+        "music": "music.mp3",
+        "background": "bg",
+        "events": {
+          "1": {
+            "type": "dialogue",
+            "text": "Глава 1 - Старые преданья.",
+            "characters": null,
+            "sound": "sound.mp3",
+            "text_author_name": "pers1",
+            "next_event": "2",
+            "next_scene": null
+          },
+          "2": {
+            "type": "choice",
+            "sound": null,
+            "characters": null,
+            "menu": {
+              "choice_text": "Выбор",
+              "text_author_name": null,
+              "1": {
+                "option_text": "Начинать расспрашивать людей",
+                "next_event": "4",
+                "next_scene": null
+              },
+              "2": {
+                "option_text": "Изучать следы магии",
+                "next_event": null,
+                "next_scene": "2"
+              }
+            }
+          },
+          "3": {
+            "type": "dialogue",
+            "sound": null,
+            "characters": [{"name": "pers2","xalign": 0.75,"yalign": 0.5}
+            ],
+            "text": "text",
+            "text_author_name": "pers2",
+            "next_event": null,
+            "next_scene": "0"
+          }
+        }
+      },
+        "2": {
+          "music": "music.mp3",
+          "background": "bg send",
+          "events": {
+            "1": {
+              "type": "dialogue",
+              "characters": [{ "name": "pers1", "xalign": 0.75, "yalign": 0.5}],
+              "sound": null,
+              "text": "text",
+              "text_author_name": "pers1",
+              "next_event": null,
+              "next_scene": "0"
+            }
+          }
+        }
+    }
+}
