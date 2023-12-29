@@ -67,6 +67,7 @@ init python:
             g.image(f"images/{image}")
 
     update()
+    
 ################################################################################
 ## Инициализация
 ################################################################################
@@ -382,6 +383,8 @@ screen navigation():
 
         textbutton _("Галерея") action ShowMenu("gallery")
 
+        textbutton _("Галерея героев") action ShowMenu("character_gallery")
+
         textbutton _("Настройки") action ShowMenu("preferences")
 
         if _in_replay:
@@ -405,6 +408,23 @@ screen navigation():
             ## версии.
             textbutton _("Выход") action Quit(confirm=not main_menu)
 
+screen character_gallery():
+    tag menu
+
+    add gui.main_menu_background
+    $length = len(persistent.character_mention.keys())
+    grid 3 length/3 + 1:
+        xfill True
+        yfill True
+        $i = 0
+        $j = 0
+        for character in persistent.character_mention.keys():
+            add character_g.make_button(character, Image(image_dict[character], oversample = 3),xalign =0.5, yalign =0.5)
+            $i+=1
+        for j in range(0, (3*int(length/3) + 1) - i):
+            null
+            $j+=1
+    textbutton "Назад" text_color "#00AB6F" action Return() xalign 0.01 yalign 0.95
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text

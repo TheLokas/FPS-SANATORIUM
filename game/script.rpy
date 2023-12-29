@@ -10,7 +10,12 @@
         config.has_autosave = False
         config.has_quicksave = False
         config.hard_rollback_limit = 0
-        
+
+        if not persistent.savemoment:
+            persistent.character_mention = {}
+        if not persistent.character_mention:
+            persistent.character_mention = {}
+
         #persistent.savemoment = # variable value
         #renpy.persis
 
@@ -127,6 +132,7 @@
                 characters = event["characters"]
                 if characters is not None:
                     for character in characters:
+                        persistent.character_mention[character["name"]] = True
                         renpy.show(character["name"], at_list=[Position(xalign = character["xalign"], yalign = character["yalign"])])
                 renpy.say(event["text_author_name"], event["text"])
                 nextEvent = event["next_event"]
@@ -141,6 +147,7 @@
                 menu = event["menu"]
                 if characters is not None:
                     for character in characters:
+                        persistent.character_mention[character["name"]] = True
                         renpy.show(character["name"], at_list=[Position(xalign = character["xalign"], yalign = character["yalign"])])
                 renpy.say(menu["text_author_name"], menu["choice_text"])
 
@@ -173,17 +180,32 @@
                 scenes = scenario["scenes"]
                 ShowScene(scenes[n])
                 return
-            
+        
+        image_dict = {}
+        character_gallery_dict = {}
         filenames = GetFilenames()
         for filename in filenames:
             with renpy.open_file(f"chapters/{filename}") as j:
                 scenario = json.load(j)
                 characters = scenario["characters"]
                 #jsonFile.append(j)
-                    #scenes = scenario["scenes"]
+                    #scenes = scenario["scenes"]               
                 for character in characters:
+                    if character["code_name"] not in persistent.character_mention.keys():
+                        persistent.character_mention[character["code_name"]] = False
+                    if character["code_name"] not in image_dict.keys():
+                        image_dict[character["code_name"]] = character["image"]
+                    if character["code_name"] not in character_gallery_dict.keys():
+                        character_gallery_dict[character["code_name"]] = character["gallery_image"]
                     renpy.image(character["code_name"], Image(character["image"],oversample = character["oversample"]))
-                    
+        character_g = Gallery()
+        character_g.locked_button =Image("images/logo.png", oversample = 3.0)
+        for character in persistent.character_mention.keys():
+            character_g.button(character)
+            first = "persistent.character_mention['"
+            character_g.condition(first + character + "']")
+            character_g.image(Image(f"images/{character_gallery_dict[character]}"))         
+         
 
                     
             # next = 1

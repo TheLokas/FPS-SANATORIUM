@@ -4,9 +4,11 @@ import io
 
 class PersistentEmulate():
     savemoment = {}
+    character_mention = {}
     gallery = {}
 
 persistent = PersistentEmulate()
+
 persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
 
 
@@ -124,14 +126,6 @@ def GetNotInDirectoryFilenames():
     directory = os.path.dirname(os.path.abspath(__file__))
     filenames_list = []
     for (dirpath, dirnames, filenames) in os.walk(f"{directory}/chapters"):
-        filenames_list.append(filenames)
-    return filenames_list[0]
-
-
-def GetImages():
-    directory = os.path.dirname(os.path.abspath(__file__))
-    filenames_list = []
-    for (dirpath, dirnames, filenames) in os.walk(f"{directory}/images"):
         filenames_list.append(filenames)
     return filenames_list[0]
 
