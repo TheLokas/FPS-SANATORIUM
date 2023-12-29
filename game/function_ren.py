@@ -4,6 +4,7 @@ import io
 
 class PersistentEmulate():
     savemoment = {}
+    gallery = {}
 
 persistent = PersistentEmulate()
 persistent.savemoment = {"chapter": 1, "scene": "1", "dialogue": ["dialogue", "1"]}
@@ -112,10 +113,25 @@ import os
 
 
 
+# def GetNotInDirectoryFilenames(dir):
+#     directory = os.path.dirname(os.path.abspath(__file__))
+#     filenames_list = []
+#     for (dirpath, dirnames, filenames) in os.walk(f"{directory}/{dir}"):
+#         filenames_list.append(filenames)
+#     return filenames_list[0]
+
 def GetNotInDirectoryFilenames():
     directory = os.path.dirname(os.path.abspath(__file__))
     filenames_list = []
     for (dirpath, dirnames, filenames) in os.walk(f"{directory}/chapters"):
+        filenames_list.append(filenames)
+    return filenames_list[0]
+
+
+def GetImages():
+    directory = os.path.dirname(os.path.abspath(__file__))
+    filenames_list = []
+    for (dirpath, dirnames, filenames) in os.walk(f"{directory}/images"):
         filenames_list.append(filenames)
     return filenames_list[0]
 
@@ -168,4 +184,5 @@ def GetFilenames():
     for ar in newArray:
         result.append(ar['path'])
     return result
+
 

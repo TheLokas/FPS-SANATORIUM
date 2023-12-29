@@ -90,7 +90,7 @@
     },
     "2": {
       "music": "back.mp3",
-      "background": "firecity",
+      "background": "bg firecity",
       "events": {
         "1": {
           "type": "dialogue",
@@ -114,7 +114,7 @@
     },
     "3": {
       "music": "back.mp3",
-      "background": "home",
+      "background": "bg home",
       "events": {
         "1": {
           "type": "dialogue",
@@ -263,7 +263,7 @@
       }
     },
       "4": {
-        "music": "bg relax.mp3",
+        "music": "relax.mp3",
         "background": "bg wall",
         "events": {
           "1": {
@@ -783,7 +783,7 @@
     },
   "6": {
     "music": null,
-    "background": "bazar2",
+    "background": "bg bazar2",
     "events": {
       "1": {
         "type": "dialogue",

@@ -1,8 +1,19 @@
-﻿init -998 python:
+﻿init -1000 python:
+    def get_image(file):
+        return "gui/%s" % file
+init -998 python:
     import json
     import os
     # Добавить удаление сохранения
     
+
+    rows = 2 #Колличество изображений по горизонтали
+    cols = 3 #Колличество изображений по вертикали
+    cells = rows * cols #Колличество изображений на одной странице
+    gallery_mode = "bg"
+
+    page = 0
+
 
     def LoadGame(slot):
         with renpy.open_file("saves.json") as j:
@@ -14,7 +25,48 @@
         renpy.save_persistent()
         #renpy.jump("loadGame")
         return
+
+    def imForGallery():
+        filenames = renpy.list_files()
+        newFilenames = []
+        for filename in filenames:
+            if os.path.basename(filename).startswith("bg "):
+                newFilenames.append(os.path.basename(filename))
+        return newFilenames
+
+
+init python:
+
+    g = Gallery()
+
+    g.locked_button = get_image("/gallery/not_opened_idle.png")
+    g.navigation = False
+
+    images = imForGallery()
+    #persistent.gallery = {}
+    if persistent.gallery is None:
+        persistent.gallery = {}
+    for image in images:
+        try: check = persistent.gallery[image]
+        except:
+            persistent.gallery[image] = False
+
+    
+        #g.unlock(image.split('.')[0])
         
+    gallery_table = []
+    for ima in images:
+        gallery_table.append(ima)
+    gallery_table.reverse()
+
+    def update():
+        for image in images:
+            g.button(image.split('.')[0])
+            check = persistent.gallery[image]
+            g.condition(f"{check}")
+            g.image(f"images/{image}")
+
+    update()
 ################################################################################
 ## Инициализация
 ################################################################################
@@ -615,17 +667,100 @@ screen load():
     use file_slots(_("Загрузить"))
 
 
-screen gallery():
+screen gallery1:
 
+    # Убедимся, что он заменит собой главное меню.
     tag menu
 
-    use game_menu(_("Галерея"), scroll="viewport"):
+    # Добавим фоновую картинку.
+    #add "beach2"
 
-        style_prefix "gallery"
+    # Сетка, состоящая из кнопок.
+    grid 5 5:
 
-        vbox:
+        xfill True
+        yfill True
 
-            text _("Галерея в процессе разработки")
+        for ima in images:
+            if persistent.gallery[ima]:
+                imagebutton:
+                    idle Image(f"images/{ima}", oversample=5.0)
+                    action Show("gallery_pic", file=ima), With(Dissolve(0.2)) 
+            else:
+                imagebutton:
+                    idle Image("images/kalivan nice.png", oversample=4.0)
+        textbutton "Return" action Return() xalign 0.5 yalign 0.5
+
+
+screen gallery_pic(file):
+    imagebutton:
+        idle Image(file)
+        action Hide("gallery_pic")
+
+
+
+screen gallery:
+    tag menu
+    modal True
+    use game_menu ("Галерея"):
+        fixed:
+            $ update()
+            $ len_table = len(gallery_table)
+            grid rows cols:
+                xpos 0.1
+                ypos 0.1
+                $ cg_displayed = 0
+                $ next_page = page + 1
+                if next_page > int(len_table/cells):
+                    $ next_page = 0
+                #В этом цикле каждое изображение обрабатывается - к нему добавляется миниатюра и 
+                #кнопка по нажатии на которую открывается полное изображение. Все это помещятся в сетку(grid)
+                for n in range(0, len_table):
+                    if n < (page+1)*cells and n>=page*cells:
+                        python:
+                            if gallery_mode == "cg":
+                                _t = im.Crop("/"+gallery_table[n] , (0,0,1280,720))#Указываем размеры изображений и не забываем про тип файла, если он будет отличающимся - возникнет ошибка.
+                            elif gallery_mode == "bg":
+                                _t = im.Crop("/"+gallery_table[n] , (0,0,1280,720))
+                            th = im.Scale(_t, 320, 180)
+                            img = im.Composite((336,196),(8,8),im.Alpha(th,0.9),(0,0),im.Image(get_image("/gallery/thumbnail_idle.png")))
+                            imgh = im.Composite((336,196),(8,8),th,(0,0),im.Image(get_image("/gallery/thumbnail_hover.png")))
+                        add g.make_button(gallery_table[n].split('.')[0], get_image("/gallery/blank.png"), None, imgh, img, bottom_margin=50, right_margin=50)
+                        $ cg_displayed += 1
+                        if n+1 == len_table:
+                            $ next_page = 0
+                for j in range(0, cells-cg_displayed):
+                    null
+            #Отображение кнопки "назад"
+            if page != 0:
+                imagebutton:
+                    auto get_image("/backward_%s.png")
+                    yalign 0.5
+                    xalign 0.06
+                    action (SetVariable('page', page-1), ShowMenu("gallery"))
+            #Отображение кнопки "вперед"
+            imagebutton:
+                auto get_image("/forward_%s.png")
+                yalign 0.5
+                xalign 0.99
+                action (SetVariable('page', next_page), ShowMenu("gallery"))
+            #Расчет колличества страниц с изображениями
+            python:
+                def abc(n,k):
+                    l = float(n)/float(k)
+                    if l-int(l) > 0:
+                        return int(l)+1
+                    else:
+                        return l
+                pages = str(page+1)+"/"+str(int(abc(len_table,cells)))
+            #Вывод колличества страниц с изображениями
+            text pages:
+                xalign 0.985
+                yalign 0.97
+
+
+
+
 
 
 
@@ -1673,3 +1808,13 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+init python:
+    style.settings_link = Style(style.default)
+    style.settings_link.kerning = 3
+    style.settings_link.color = "#909ca3"
+    style.settings_link.hover_color = "#ffffff"
+    style.settings_link.selected_color = "#909ca3"
+    style.settings_link.selected_idle_color = "#909ca3"
+    style.settings_link.selected_hover_color = "#ffffff"
+    style.settings_link.insensitive_color = "#909ca3"

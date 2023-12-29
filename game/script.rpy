@@ -99,6 +99,8 @@
         #def ShowScene(scene):
             renpy.scene()
             renpy.show(scene["background"])
+            persistent.gallery[f"{scene['background']}.png"] = True
+            persistent.gallery[f"{scene['background']}.jpg"] = True
             events = scene["events"]
             if scene["music"] is not None:
                 renpy.play(scene["music"], channel='music')

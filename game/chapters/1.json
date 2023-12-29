@@ -134,7 +134,7 @@
       }
     },
     "2": {
-      "music": "bg relax.mp3",
+      "music": "relax.mp3",
       "background": "bg send",
       "events": {
         "1": {
@@ -272,8 +272,8 @@
 
     },
     "3": {
-      "music": "bg bazar.mp3",
-      "background": "bazar2",
+      "music": "bazar.mp3",
+      "background": "bg bazar2",
       "events": {
         "1": {
           "type": "dialogue",
@@ -655,8 +655,8 @@
 
     },
     "4": {
-      "music": "bg bazar.mp3",
-      "background": "bazar2",
+      "music": "bazar.mp3",
+      "background": "bg bazar2",
       "events": {
         "1": {
           "type": "dialogue",
